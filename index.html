@@ -370,12 +370,64 @@
             padding: 40px 30px;
             text-align: center;
             transition: transform 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            position: relative;
         }
 
         .condition-card:hover {
             transform: translateY(-5px);
             background: #000;
             color: #fff;
+        }
+
+        .condition-card.expanded {
+            background: #f8f8f8;
+            color: #000;
+            text-align: left;
+        }
+
+        .condition-card.expanded:hover {
+            background: #f0f0f0;
+        }
+
+        .condition-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .condition-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            margin-top: 0;
+        }
+
+        .condition-card.expanded .condition-content {
+            max-height: 200px;
+            margin-top: 20px;
+        }
+
+        .expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .condition-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .use-case-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .use-case-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
         }
 
         .condition-card h3 {
@@ -633,17 +685,50 @@
             </div>
 
             <div class="conditions-grid">
-                <div class="condition-card">
-                    <h3>MCAS</h3>
-                    <p class="full-name">Mast Cell Activation Syndrome</p>
+                <div class="condition-card" onclick="toggleCondition(this)">
+                    <div class="condition-header">
+                        <div>
+                            <h3>MCAS</h3>
+                            <p class="full-name">Mast Cell Activation Syndrome</p>
+                        </div>
+                        <i class="fas fa-chevron-down expand-icon"></i>
+                    </div>
+                    <div class="condition-content">
+                        <div class="use-case-title">Example Use Case:</div>
+                        <div class="use-case-description">
+                            Track how different foods, supplements, or environmental triggers affect your heart rate variability, sleep quality, and recovery metrics. Test elimination diets, antihistamines, or stress management techniques to identify what actually helps reduce your symptom flares.
+                        </div>
+                    </div>
                 </div>
-                <div class="condition-card">
-                    <h3>POTS</h3>
-                    <p class="full-name">Postural Orthostatic Tachycardia Syndrome</p>
+                <div class="condition-card" onclick="toggleCondition(this)">
+                    <div class="condition-header">
+                        <div>
+                            <h3>POTS</h3>
+                            <p class="full-name">Postural Orthostatic Tachycardia Syndrome</p>
+                        </div>
+                        <i class="fas fa-chevron-down expand-icon"></i>
+                    </div>
+                    <div class="condition-content">
+                        <div class="use-case-title">Example Use Case:</div>
+                        <div class="use-case-description">
+                            Monitor how hydration protocols, compression garments, or specific exercises impact your heart rate patterns and energy levels throughout the day. Measure the effectiveness of different salt intake levels or pacing strategies on your overall function.
+                        </div>
+                    </div>
                 </div>
-                <div class="condition-card">
-                    <h3>EDS</h3>
-                    <p class="full-name">Ehlers-Danlos Syndrome</p>
+                <div class="condition-card" onclick="toggleCondition(this)">
+                    <div class="condition-header">
+                        <div>
+                            <h3>EDS</h3>
+                            <p class="full-name">Ehlers-Danlos Syndrome</p>
+                        </div>
+                        <i class="fas fa-chevron-down expand-icon"></i>
+                    </div>
+                    <div class="condition-content">
+                        <div class="use-case-title">Example Use Case:</div>
+                        <div class="use-case-description">
+                            Track how different physical therapy approaches, joint support strategies, or pain management techniques affect your sleep quality, stress levels, and daily function. Test the impact of specific exercises, braces, or lifestyle modifications on your overall well-being.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -661,5 +746,20 @@
             <p>© 2025 meports. Your health, your data, your agency.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleCondition(card) {
+            // Close all other cards
+            const allCards = document.querySelectorAll('.condition-card');
+            allCards.forEach(otherCard => {
+                if (otherCard !== card) {
+                    otherCard.classList.remove('expanded');
+                }
+            });
+            
+            // Toggle current card
+            card.classList.toggle('expanded');
+        }
+    </script>
 </body>
 </html>
