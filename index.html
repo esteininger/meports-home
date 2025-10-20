@@ -270,10 +270,14 @@
             justify-content: center;
             margin: 0 auto 15px;
             border: 1px solid #e0e0e0;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: #000;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .wearable-logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
         }
 
         .wearable-logo:hover {
@@ -558,43 +562,26 @@
 
             <div class="wearables-showcase">
                 <div class="wearable-item">
-                    <div class="wearable-logo" style="background: linear-gradient(135deg, #0095ff 0%, #00d4ff 100%); color: white;">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                            <!-- Oura ring placeholder -->
-                            <circle cx="30" cy="30" r="20" stroke="white" stroke-width="3" fill="none"/>
-                            <circle cx="30" cy="30" r="14" stroke="white" stroke-width="2" fill="none"/>
-                        </svg>
+                    <div class="wearable-logo">
+                        <img src="assets/oura.png" alt="Oura Ring">
                     </div>
                     <div class="wearable-name">Oura</div>
                 </div>
                 <div class="wearable-item">
-                    <div class="wearable-logo" style="background: #000; color: white;">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="white">
-                            <!-- Apple Watch placeholder -->
-                            <rect x="10" y="5" width="30" height="40" rx="8" stroke="white" stroke-width="2" fill="none"/>
-                            <rect x="15" y="10" width="20" height="30" rx="2" fill="white"/>
-                            <circle cx="25" cy="25" r="8" fill="#000"/>
-                        </svg>
+                    <div class="wearable-logo">
+                        <img src="assets/apple.png" alt="Apple Watch">
                     </div>
                     <div class="wearable-name">Apple Watch</div>
                 </div>
                 <div class="wearable-item">
-                    <div class="wearable-logo" style="background: #000; color: white;">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="white">
-                            <!-- WHOOP band placeholder -->
-                            <rect x="5" y="18" width="40" height="14" rx="7" fill="white"/>
-                            <rect x="18" y="22" width="14" height="6" rx="1" fill="#000"/>
-                        </svg>
+                    <div class="wearable-logo">
+                        <img src="assets/whoop.png" alt="WHOOP">
                     </div>
                     <div class="wearable-name">WHOOP</div>
                 </div>
                 <div class="wearable-item">
                     <div class="wearable-logo">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                            <!-- Fitbit placeholder -->
-                            <path d="M25 10 L40 20 L40 35 L25 45 L10 35 L10 20 Z" stroke="#000" stroke-width="2" fill="none"/>
-                            <circle cx="25" cy="27" r="6" fill="#00B0B9"/>
-                        </svg>
+                        <img src="assets/fitbit.png" alt="Fitbit">
                     </div>
                     <div class="wearable-name">Fitbit</div>
                 </div>
