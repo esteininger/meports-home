@@ -411,7 +411,7 @@
         .condition-tabs {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 40px;
             flex-wrap: wrap;
         }
@@ -420,11 +420,12 @@
             background: #f8f8f8;
             border: 2px solid #e0e0e0;
             border-radius: 15px;
-            padding: 15px 25px;
+            padding: 12px 20px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .condition-tab:hover {
@@ -783,25 +784,67 @@
                 <div class="condition-tab active" data-condition="mcas">MCAS</div>
                 <div class="condition-tab" data-condition="pots">POTS</div>
                 <div class="condition-tab" data-condition="eds">EDS</div>
+                <div class="condition-tab" data-condition="fibro">Fibro</div>
+                <div class="condition-tab" data-condition="me">ME/CFS</div>
+                <div class="condition-tab" data-condition="lupus">Lupus</div>
+                <div class="condition-tab" data-condition="ms">MS</div>
             </div>
 
             <div class="condition-content">
                 <div class="condition-panel active" id="mcas">
                     <div class="use-case-title">Mast Cell Activation Syndrome (MCAS)</div>
                     <div class="use-case-description">
-                        Track how different foods, supplements, or environmental triggers affect your heart rate variability, sleep quality, and recovery metrics. Test elimination diets, antihistamines, or stress management techniques to identify what actually helps reduce your symptom flares.
+                        <p><strong>Key Metrics to Track:</strong> Heart Rate Variability, Sleep Quality, Body Temperature, Stress Levels, Inflammation Markers</p>
+                        <p><strong>Common Interventions:</strong> Low-histamine diet, antihistamines, mast cell stabilizers, stress reduction techniques</p>
+                        <p><strong>Experiment Workflow:</strong> Establish baseline for 2 weeks → Introduce one intervention (e.g., elimination diet) → Monitor HRV and sleep quality for 4 weeks → Document symptom changes and flare patterns</p>
                     </div>
                 </div>
                 <div class="condition-panel" id="pots">
                     <div class="use-case-title">Postural Orthostatic Tachycardia Syndrome (POTS)</div>
                     <div class="use-case-description">
-                        Monitor how hydration protocols, compression garments, or specific exercises impact your heart rate patterns and energy levels throughout the day. Measure the effectiveness of different salt intake levels or pacing strategies on your overall function.
+                        <p><strong>Key Metrics to Track:</strong> Heart Rate Patterns, Blood Pressure, Activity Levels, Sleep Quality, Energy Levels</p>
+                        <p><strong>Common Interventions:</strong> Increased salt intake, compression garments, specific exercises, pacing strategies</p>
+                        <p><strong>Experiment Workflow:</strong> Baseline heart rate and energy tracking → Test different salt protocols (3g vs 6g daily) → Monitor HR spikes and energy crashes → Adjust hydration and activity pacing based on data</p>
                     </div>
                 </div>
                 <div class="condition-panel" id="eds">
                     <div class="use-case-title">Ehlers-Danlos Syndrome (EDS)</div>
                     <div class="use-case-description">
-                        Track how different physical therapy approaches, joint support strategies, or pain management techniques affect your sleep quality, stress levels, and daily function. Test the impact of specific exercises, braces, or lifestyle modifications on your overall well-being.
+                        <p><strong>Key Metrics to Track:</strong> Sleep Quality, Pain Levels, Joint Stability, Activity Tolerance, Recovery Time</p>
+                        <p><strong>Common Interventions:</strong> Physical therapy protocols, joint support, pain management, pacing strategies</p>
+                        <p><strong>Experiment Workflow:</strong> Track baseline pain and sleep → Introduce gentle PT exercises → Monitor joint stability and recovery time → Adjust activity levels based on HRV and sleep data</p>
+                    </div>
+                </div>
+                <div class="condition-panel" id="fibro">
+                    <div class="use-case-title">Fibromyalgia</div>
+                    <div class="use-case-description">
+                        <p><strong>Key Metrics to Track:</strong> Sleep Stages, Pain Intensity, Fatigue Levels, Stress Response, Activity Tolerance</p>
+                        <p><strong>Common Interventions:</strong> Sleep hygiene, gentle exercise, stress management, dietary changes, supplements</p>
+                        <p><strong>Experiment Workflow:</strong> Monitor sleep stages and pain levels → Test magnesium or other supplements → Track deep sleep improvements → Adjust activity based on fatigue and HRV data</p>
+                    </div>
+                </div>
+                <div class="condition-panel" id="me">
+                    <div class="use-case-title">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS)</div>
+                    <div class="use-case-description">
+                        <p><strong>Key Metrics to Track:</strong> Heart Rate Variability, Activity Tolerance, Sleep Quality, Cognitive Function, Energy Levels</p>
+                        <p><strong>Common Interventions:</strong> Pacing strategies, sleep optimization, stress reduction, dietary modifications</p>
+                        <p><strong>Experiment Workflow:</strong> Establish energy baseline with activity tracking → Test different pacing protocols → Monitor HRV for overexertion signs → Adjust activity levels to prevent crashes</p>
+                    </div>
+                </div>
+                <div class="condition-panel" id="lupus">
+                    <div class="use-case-title">Lupus (SLE)</div>
+                    <div class="use-case-description">
+                        <p><strong>Key Metrics to Track:</strong> Inflammation Markers, Sleep Quality, Stress Levels, Energy Patterns, Joint Function</p>
+                        <p><strong>Common Interventions:</strong> Anti-inflammatory diet, stress management, sun protection, activity modification</p>
+                        <p><strong>Experiment Workflow:</strong> Track inflammation and energy patterns → Test anti-inflammatory dietary changes → Monitor sleep and stress response → Adjust activity based on flare patterns</p>
+                    </div>
+                </div>
+                <div class="condition-panel" id="ms">
+                    <div class="use-case-title">Multiple Sclerosis (MS)</div>
+                    <div class="use-case-description">
+                        <p><strong>Key Metrics to Track:</strong> Cognitive Function, Fatigue Levels, Mobility, Sleep Quality, Stress Response</p>
+                        <p><strong>Common Interventions:</strong> Exercise protocols, stress management, dietary modifications, temperature regulation</p>
+                        <p><strong>Experiment Workflow:</strong> Baseline cognitive and physical function → Test cooling strategies or exercise protocols → Monitor fatigue and cognitive changes → Adjust interventions based on symptom patterns</p>
                     </div>
                 </div>
             </div>
