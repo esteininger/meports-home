@@ -750,16 +750,16 @@
 
     <script>
         function toggleCondition(card) {
-            // Close all other cards
+            // Close all other cards first
             const allCards = document.querySelectorAll('.condition-card');
             allCards.forEach(otherCard => {
-                if (otherCard !== card) {
-                    otherCard.classList.remove('expanded');
-                }
+                otherCard.classList.remove('expanded');
             });
             
-            // Toggle current card
-            card.classList.toggle('expanded');
+            // Only expand if the clicked card wasn't already expanded
+            if (!card.classList.contains('expanded')) {
+                card.classList.add('expanded');
+            }
         }
     </script>
 </body>
