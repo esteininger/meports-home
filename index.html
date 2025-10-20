@@ -687,7 +687,7 @@
             </div>
 
             <div class="conditions-grid">
-                <div class="condition-card" onclick="toggleCondition(this)">
+                <div class="condition-card">
                     <div class="condition-header">
                         <div>
                             <h3>MCAS</h3>
@@ -702,7 +702,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="condition-card" onclick="toggleCondition(this)">
+                <div class="condition-card">
                     <div class="condition-header">
                         <div>
                             <h3>POTS</h3>
@@ -717,7 +717,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="condition-card" onclick="toggleCondition(this)">
+                <div class="condition-card">
                     <div class="condition-header">
                         <div>
                             <h3>EDS</h3>
@@ -750,18 +750,23 @@
     </footer>
 
     <script>
-        function toggleCondition(card) {
-            // Close all other cards first
-            const allCards = document.querySelectorAll('.condition-card');
-            allCards.forEach(otherCard => {
-                otherCard.classList.remove('expanded');
-            });
+        document.addEventListener('DOMContentLoaded', function() {
+            const conditionCards = document.querySelectorAll('.condition-card');
             
-            // Only expand if the clicked card wasn't already expanded
-            if (!card.classList.contains('expanded')) {
-                card.classList.add('expanded');
-            }
-        }
+            conditionCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Close all other cards first
+                    conditionCards.forEach(otherCard => {
+                        if (otherCard !== this) {
+                            otherCard.classList.remove('expanded');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    this.classList.toggle('expanded');
+                });
+            });
+        });
     </script>
 </body>
 </html>
