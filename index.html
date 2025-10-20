@@ -266,6 +266,30 @@
             text-align: center;
         }
 
+        .wearable-item.featured {
+            position: relative;
+        }
+
+        .wearable-item.featured::before {
+            content: "Most Accurate";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .wearable-item.featured .wearable-logo {
+            border: 3px solid #10b981;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+
         .wearable-logo {
             width: 140px;
             height: 140px;
@@ -620,11 +644,11 @@
             </div>
 
             <div class="wearables-showcase">
-                <div class="wearable-item">
+                <div class="wearable-item featured">
                     <div class="wearable-logo">
                         <img src="assets/oura.png" alt="Oura Ring">
                     </div>
-                    <div class="wearable-name">Oura</div>
+                    <div class="wearable-name">Oura Ring</div>
                 </div>
                 <div class="wearable-item">
                     <div class="wearable-logo">
@@ -643,6 +667,45 @@
                         <img src="assets/fitbit.png" alt="Fitbit">
                     </div>
                     <div class="wearable-name">Fitbit</div>
+                </div>
+            </div>
+
+            <div style="max-width: 800px; margin: 60px auto 0; text-align: center;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 20px; color: #333;">Why Oura Ring is our recommended choice</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6; margin-bottom: 30px;">
+                    The Oura Ring provides the most comprehensive and accurate health metrics for biohacking experiments. 
+                    Its 24/7 monitoring captures detailed sleep stages, heart rate variability, body temperature, and recovery data 
+                    that's essential for understanding how interventions affect your unique biology.
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; text-align: left;">
+                        <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; color: #333;">Sleep Metrics</h4>
+                        <ul style="font-size: 0.9rem; color: #666; line-height: 1.5; margin: 0; padding-left: 15px;">
+                            <li>Sleep Score (0-100)</li>
+                            <li>Deep, REM, Light stages</li>
+                            <li>Sleep efficiency & timing</li>
+                            <li>SpO2 levels</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; text-align: left;">
+                        <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; color: #333;">Recovery Metrics</h4>
+                        <ul style="font-size: 0.9rem; color: #666; line-height: 1.5; margin: 0; padding-left: 15px;">
+                            <li>Readiness Score (0-100)</li>
+                            <li>Heart Rate Variability</li>
+                            <li>Body temperature trends</li>
+                            <li>Resting heart rate</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; text-align: left;">
+                        <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; color: #333;">Activity & Stress</h4>
+                        <ul style="font-size: 0.9rem; color: #666; line-height: 1.5; margin: 0; padding-left: 15px;">
+                            <li>Activity Score (0-100)</li>
+                            <li>Step count & calories</li>
+                            <li>Stress monitoring</li>
+                            <li>Women's health tracking</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
