@@ -151,6 +151,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .metric-label i {
+            font-size: 1rem;
+            color: #10b981;
         }
 
         .metric-value {
@@ -163,6 +171,13 @@
         .metric-trend {
             font-size: 0.9rem;
             color: #10b981;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .metric-trend i {
+            font-size: 0.8rem;
         }
 
         .section {
@@ -582,19 +597,37 @@
             <div class="hero-visual">
                 <div class="data-viz">
                     <div class="metric-card">
-                        <div class="metric-label">Heart Rate Variability</div>
+                        <div class="metric-label">
+                            <i class="fas fa-heartbeat"></i>
+                            Heart Rate Variability
+                        </div>
                         <div class="metric-value">62ms</div>
-                        <div class="metric-trend">↑ 12% from baseline</div>
+                        <div class="metric-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            12% from baseline
+                        </div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-label">Sleep Quality</div>
+                        <div class="metric-label">
+                            <i class="fas fa-bed"></i>
+                            Sleep Quality
+                        </div>
                         <div class="metric-value">87%</div>
-                        <div class="metric-trend">↑ 8% from baseline</div>
+                        <div class="metric-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            8% from baseline
+                        </div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-label">Recovery Score</div>
+                        <div class="metric-label">
+                            <i class="fas fa-chart-line"></i>
+                            Recovery Score
+                        </div>
                         <div class="metric-value">94</div>
-                        <div class="metric-trend">↑ 15% from baseline</div>
+                        <div class="metric-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            15% from baseline
+                        </div>
                     </div>
                 </div>
             </div>
