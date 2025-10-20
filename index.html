@@ -758,17 +758,24 @@
         document.addEventListener('DOMContentLoaded', function() {
             const conditionCards = document.querySelectorAll('.condition-card');
             
-            conditionCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    // Close all other cards first
-                    conditionCards.forEach(otherCard => {
-                        if (otherCard !== this) {
-                            otherCard.classList.remove('expanded');
-                        }
+            conditionCards.forEach((card, index) => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('Clicked card:', index);
+                    
+                    // First, close ALL cards
+                    conditionCards.forEach((otherCard, otherIndex) => {
+                        otherCard.classList.remove('expanded');
+                        console.log('Closed card:', otherIndex);
                     });
                     
-                    // Toggle current card
-                    this.classList.toggle('expanded');
+                    // Then, if this card wasn't expanded, expand it
+                    if (!this.classList.contains('expanded')) {
+                        this.classList.add('expanded');
+                        console.log('Opened card:', index);
+                    }
                 });
             });
         });
