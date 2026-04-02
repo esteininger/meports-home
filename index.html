@@ -101,12 +101,13 @@
   .nav-links a:hover { color: var(--text); }
 
   .nav-cta {
-    padding: 7px 16px; background: var(--text); color: var(--bg);
-    font-family: var(--mono); font-size: 0.78rem; font-weight: 500;
+    padding: 9px 18px; background: var(--text); color: #FFFFFF;
+    font-family: var(--mono); font-size: 0.78rem; font-weight: 600;
     border: none; border-radius: 5px; cursor: pointer; transition: all 0.15s;
-    text-decoration: none; display: inline-block;
+    text-decoration: none; display: inline-block; min-height: 36px;
+    line-height: 1.2;
   }
-  .nav-cta:hover { background: var(--clinical); }
+  .nav-cta:hover { background: var(--clinical); color: #FFFFFF; }
 
   /* HERO */
   .hero {
@@ -170,11 +171,12 @@
   .email-input:focus { border-color: var(--clinical); box-shadow: 0 0 0 3px var(--clinical-glow); }
 
   .email-submit {
-    padding: 12px 22px; background: var(--text); color: var(--bg);
-    font-family: var(--mono); font-weight: 500; font-size: 0.82rem;
-    border: none; border-radius: 6px; cursor: pointer; transition: all 0.15s; white-space: nowrap;
+    padding: 14px 24px; background: var(--text); color: #FFFFFF;
+    font-family: var(--mono); font-weight: 600; font-size: 0.85rem;
+    border: none; border-radius: 6px; cursor: pointer; transition: all 0.15s;
+    white-space: nowrap; min-height: 48px;
   }
-  .email-submit:hover { background: var(--clinical); }
+  .email-submit:hover { background: var(--clinical); color: #FFFFFF; }
   .email-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 
   .form-note {
@@ -441,25 +443,105 @@
   .footer-links a { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
   .footer-links a:hover { color: var(--text); }
 
-  /* RESPONSIVE */
+  /* RESPONSIVE — Tablet */
   @media (max-width: 768px) {
-    nav { padding: 0 20px; }
-    .hero { padding: 120px 20px 60px; }
+    nav { padding: 0 16px; height: 52px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .nav-cta { padding: 10px 20px; font-size: 0.82rem; min-height: 40px; }
+
+    .hero { padding: 100px 20px 50px; min-height: auto; }
+    h1 { font-size: clamp(1.8rem, 7vw, 2.6rem); margin-bottom: 18px; }
+    .hero-sub { font-size: 1rem; margin-bottom: 32px; }
+    .hero-badge { font-size: 0.68rem; margin-bottom: 20px; }
+
     section { padding: 60px 20px; }
-    .problem-grid, .signals-grid, .steps-grid { grid-template-columns: 1fr; }
+    h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
+    .section-desc { font-size: 0.95rem; margin-bottom: 32px; }
+
+    .email-form { flex-direction: column; max-width: 100%; }
+    .email-input { font-size: 16px; padding: 14px; } /* 16px prevents iOS zoom */
+    .email-submit { width: 100%; text-align: center; padding: 16px; font-size: 0.9rem; }
+
+    .problem-grid { grid-template-columns: 1fr; }
+    .signals-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); margin-top: 32px; }
     .market-grid { grid-template-columns: 1fr; }
+
     .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 0 20px; gap: 0 24px; }
-    .platform-grid { grid-template-columns: 1fr; }
-    .compliance-inner { flex-wrap: wrap; gap: 16px; }
+    .stat { padding: 24px 0; }
+    .stat-value { font-size: 1.5rem; }
+    .stat-label { font-size: 0.75rem; }
+
+    .platform-grid { grid-template-columns: 1fr; gap: 24px; }
+    .wearable-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .compliance-inner { flex-wrap: wrap; gap: 12px; padding: 16px 20px; }
     .compliance-sep { display: none; }
-    .compliance-strip { padding: 48px 20px 0; }
-    .email-form { flex-direction: column; }
+    .compliance-strip { padding: 40px 20px 0; }
+    .compliance-badge { font-size: 0.7rem; }
+
+    .code-window { margin-top: 32px; }
+    .code-body { font-size: 0.7rem; padding: 16px; line-height: 1.7; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 20px; }
     .ecg-divider { padding: 0 20px; }
     .bottom-cta { padding: 60px 20px; }
-    .nav-links a:not(.nav-cta) { display: none; }
-    .code-window { margin-top: 32px; }
-    .steps-grid { margin-top: 32px; }
+    .bottom-cta h2 { font-size: clamp(1.4rem, 5vw, 1.8rem); }
+  }
+
+  /* RESPONSIVE — Small phone */
+  @media (max-width: 480px) {
+    nav { padding: 0 12px; }
+    .logo { font-size: 0.85rem; }
+
+    .hero { padding: 88px 16px 40px; }
+    h1 { font-size: 1.65rem; line-height: 1.18; }
+    .hero-sub { font-size: 0.95rem; line-height: 1.65; }
+
+    section { padding: 48px 16px; }
+    h2 { font-size: 1.4rem; }
+    .section-desc { font-size: 0.9rem; }
+
+    .problem-card { padding: 20px 16px; }
+    .problem-card h3 { font-size: 0.9rem; }
+    .problem-card p { font-size: 0.82rem; }
+
+    .signal-card { padding: 20px 16px; }
+    .signal-card h3 { font-size: 0.9rem; }
+    .signal-card p { font-size: 0.82rem; }
+
+    .steps-grid { grid-template-columns: 1fr; }
+    .step-card { padding: 20px 16px; }
+
+    .market-card { padding: 20px 16px; }
+    .market-card .market-stat { font-size: 1.2rem; }
+
+    .stats-bar { grid-template-columns: 1fr 1fr; padding: 0 16px; }
+
+    .wearable-panel { padding: 20px; }
+    .wearable-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .wearable-item { padding: 12px; }
+
+    .feature-list li { font-size: 0.85rem; padding: 12px 0; }
+
+    .code-body { font-size: 0.65rem; padding: 12px; }
+
+    .bottom-cta { padding: 48px 16px; }
+    .form-note { font-size: 0.7rem; }
+
+    footer { padding: 24px 16px; }
+    .footer-left, .footer-links a { font-size: 0.7rem; }
+  }
+
+  /* Ensure adequate touch targets everywhere */
+  @media (pointer: coarse) {
+    .nav-links a { min-height: 44px; display: flex; align-items: center; }
+    .nav-cta { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    .email-submit { min-height: 48px; }
+    .email-input { min-height: 48px; }
+    .problem-card, .signal-card, .step-card, .market-card { min-height: 44px; }
+    .compliance-badge { min-height: 44px; display: inline-flex; align-items: center; }
+    .footer-links a { min-height: 44px; display: inline-flex; align-items: center; }
   }
 </style>
 </head>
