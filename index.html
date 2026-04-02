@@ -16,22 +16,22 @@
     --border-strong: #CBD1D8;
     --text: #1A1D21;
     --text-secondary: #4A5260;
-    --text-muted: #7C8594;
+    --text-muted: #636B78;
     --clinical: #0066F5;
     --clinical-dim: rgba(0, 102, 245, 0.06);
     --clinical-border: rgba(0, 102, 245, 0.15);
     --clinical-glow: rgba(0, 102, 245, 0.08);
-    --signal-green: #0D9F6E;
-    --signal-green-bg: rgba(13, 159, 110, 0.06);
-    --signal-amber: #D97706;
-    --signal-amber-bg: rgba(217, 119, 6, 0.06);
+    --signal-green: #087F5B;
+    --signal-green-bg: rgba(8, 127, 91, 0.06);
+    --signal-amber: #B45309;
+    --signal-amber-bg: rgba(180, 83, 9, 0.06);
     --signal-red: #DC2626;
     --signal-red-bg: rgba(220, 38, 38, 0.06);
     --code-bg: #1B1E2B;
     --code-text: #C9D1D9;
     --code-keyword: #79C0FF;
     --code-string: #A5D6FF;
-    --code-comment: #6E7681;
+    --code-comment: #8B949E;
     --code-num: #56D364;
     --mono: 'IBM Plex Mono', 'SF Mono', monospace;
     --serif: 'Source Serif 4', Georgia, serif;
@@ -185,7 +185,7 @@
 
   .form-success {
     display: none; padding: 12px 16px;
-    background: var(--signal-green-bg); border: 1px solid rgba(13, 159, 110, 0.2);
+    background: var(--signal-green-bg); border: 1px solid rgba(8, 127, 91, 0.2);
     border-radius: 6px; color: var(--signal-green);
     font-family: var(--mono); font-size: 0.85rem; max-width: 440px;
   }
@@ -384,7 +384,7 @@
 
   .feature-check {
     width: 18px; height: 18px; min-width: 18px; border-radius: 4px;
-    background: var(--signal-green-bg); border: 1px solid rgba(13, 159, 110, 0.2);
+    background: var(--signal-green-bg); border: 1px solid rgba(8, 127, 91, 0.2);
     color: var(--signal-green); display: flex; align-items: center; justify-content: center;
     font-size: 0.65rem; margin-top: 2px; font-weight: 700;
   }
@@ -406,20 +406,21 @@
   }
   .wearable-item:hover { border-color: var(--border-strong); transform: translateY(-2px); }
   .wearable-item img {
-    height: 28px; width: auto; object-fit: contain;
-    filter: grayscale(100%) brightness(0.3); opacity: 0.8; transition: all 0.2s;
+    height: 36px; width: 36px; object-fit: contain; border-radius: 8px;
+    transition: transform 0.2s;
   }
-  .wearable-item:hover img { filter: none; opacity: 1; }
+  .wearable-item:hover img { transform: scale(1.08); }
   .wearable-item span { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
   .wearable-item.more { border-style: dashed; justify-content: center; }
   .wearable-item.more span { font-size: 0.78rem; }
 
-  /* Garmin SVG logo styling */
+  /* Garmin logo styling */
   .wearable-item .garmin-logo {
-    height: 28px; width: auto;
-    filter: grayscale(100%) brightness(0.3); opacity: 0.8; transition: all 0.2s;
+    height: 36px; width: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    background: #000; transition: transform 0.2s;
   }
-  .wearable-item:hover .garmin-logo { filter: none; opacity: 1; }
+  .wearable-item:hover .garmin-logo { transform: scale(1.08); }
 
   /* BOTTOM CTA */
   .bottom-cta { max-width: 960px; margin: 0 auto; padding: 100px 40px; text-align: center; }
@@ -725,11 +726,14 @@
         <div class="wearable-item"><img src="assets/fitbit.png" alt="Fitbit"><span>Fitbit</span></div>
         <div class="wearable-item"><img src="assets/whoop.png" alt="WHOOP"><span>WHOOP</span></div>
         <div class="wearable-item">
-          <!-- Garmin inline SVG to avoid external dependency -->
-          <svg class="garmin-logo" viewBox="0 0 300 56" fill="#000" xmlns="http://www.w3.org/2000/svg" height="28">
-            <path d="M28.1 0C12.6 0 0 12.6 0 28.1s12.6 28 28.1 28c9.4 0 17.7-4.6 22.8-11.7H33.5c-3.3 2.4-6.3 3.4-10.1 3.4-8.6 0-15.6-7-15.6-15.6s7-15.6 15.6-15.6c5.8 0 10.8 3.2 13.5 7.8H22.3v8.2h33.5C56 12.6 43.5 0 28.1 0z"/>
-            <path d="M75.8 16.8l-12.2 38h8.4l2.5-8.6h13.3l2.5 8.6h8.4l-12.2-38h-10.7zm-.3 22.2l4.3-14.6h2.1l4.3 14.6H75.5zM117.1 16.8h-10.3v38h8.2V39.4h2.1c4.9 0 7 1.7 8.5 6.5l3.7 8.9h9.1l-4.6-10.8c-1.8-4.2-3.7-6-6.6-6.8 4.5-1.5 7.3-5.5 7.3-10.3 0-6.2-4.8-10.1-12-10.1h-5.4zm-2.1 7.3h3.8c3.1 0 5.2 1.7 5.2 4.7s-2.1 4.7-5.2 4.7h-3.8V24.1zM164.9 16.8v24.4l-14.3-24.4h-10.2v38h8.2V30.4l14.3 24.4h10.2v-38h-8.2zM189.5 16.8h-8.2v38h8.2v-38zM221.3 16.8l-14.3 24.4V16.8h-10.2v38h10.7l14.3-24.4v24.4h10.2v-38h-10.7z"/>
-          </svg>
+          <!-- Garmin triangle logo -->
+          <div class="garmin-logo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 22h20L12 2z" fill="#fff" opacity="0.9"/>
+              <path d="M12 7l-6 12h12L12 7z" fill="#000"/>
+              <path d="M12 10l-4 8h8l-4-8z" fill="#fff"/>
+            </svg>
+          </div>
           <span>Garmin</span>
         </div>
         <div class="wearable-item more"><span>+ more</span></div>
@@ -871,7 +875,7 @@ function animateCounter(el) {
 
 // ── SIGNAL CARD MINI CHARTS ──
 var canvases = document.querySelectorAll('.signal-viz canvas');
-var colors = { hrv: '#0D9F6E', sideeffect: '#D97706', churn: '#DC2626', lean: '#0066F5' };
+var colors = { hrv: '#087F5B', sideeffect: '#B45309', churn: '#DC2626', lean: '#0066F5' };
 
 canvases.forEach(function(canvas) {
   var ctx = canvas.getContext('2d');
